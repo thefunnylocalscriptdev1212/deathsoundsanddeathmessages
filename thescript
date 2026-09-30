@@ -9407,7 +9407,7 @@ local availableSounds = table.clone(deathsounds)
 
 local function PlayRandomSound()
 
-	if #allSounds == 0 then
+	if #deathsounds == 0 then
 		warn("JoinAndLeaveScript: No sounds available.")
 		return
 	end
@@ -9480,7 +9480,7 @@ end)
 
 print(
 	"JoinAndLeaveScript loaded with",
-	#allSounds,
+	#deathsounds,
 	"shuffle-bag sounds."
 )
 end)
