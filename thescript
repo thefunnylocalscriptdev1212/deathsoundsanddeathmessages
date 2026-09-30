@@ -1,4 +1,4 @@
-task.spawn(function() 
+spawn(function() 
 --[[
 	===========================================================
 	 UNIVERSAL LOCAL DEATH MESSAGE SYSTEM
@@ -1111,7 +1111,7 @@ print(
 	"[DeathSystem] Server dependency: NONE."
 )
 end)
-task.spawn(function() 
+spawn(function() 
 local Players = game:GetService("Players")
 local scriptInstance = script
 local deathsounds = {
@@ -9484,7 +9484,7 @@ print(
 	"shuffle-bag sounds."
 )
 end)
-task.spawn(function() 
+spawn(function() 
 local Workspace = game:GetService("Workspace")
 local SoundService = game:GetService("SoundService")
 
