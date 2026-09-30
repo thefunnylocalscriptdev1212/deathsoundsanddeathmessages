@@ -942,7 +942,7 @@ local function handleDeath(character, humanoid)
 	end
 
 	printMessage(
-		"<b><font color="#FF0000">[DEATH]:</font></b> " .. message
+		"<b><font color='#FF0000'>[DEATH]:</font></b> " .. message
 	)
 
 	-- Local player's death.
@@ -954,7 +954,7 @@ local function handleDeath(character, humanoid)
 		localDeathCount += 1
 
 		printMessage(
-			"<b><font color="#FF0000">[DEATH]:</font></b> Your death count is now "
+			"<b><font color='#FF0000'>[DEATH]:</font></b> Your death count is now "
 				.. localDeathCount
 				.. "."
 		)
