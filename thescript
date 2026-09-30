@@ -9399,7 +9399,7 @@ local SoundService = game:GetService("SoundService")
 -- SHUFFLE BAG
 --========================================================--
 
-local availableSounds = table.clone(allSounds)
+local availableSounds = table.clone(deathsounds)
 
 --========================================================--
 -- PLAY RANDOM SOUND
@@ -9414,7 +9414,7 @@ local function PlayRandomSound()
 
 	-- Refill once every sound has been used.
 	if #availableSounds == 0 then
-		availableSounds = table.clone(allSounds)
+		availableSounds = table.clone(deathsounds)
 	end
 
 	-- Pick one from the remaining bag.
