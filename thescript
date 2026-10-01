@@ -17892,8 +17892,14 @@ for _, child in Workspace:GetDescendants() do
 	scanAndProcessCharacter(child)
 end
 
--- New characters
-Workspace.DescendantAdded:Connect(function(d) task.wait() print("GOTCHA BI-") scanAndProcessCharacter(d) end)
+-- New characters (budget race-condition simulator)
+Workspace.DescendantAdded:Connect(function(d)
+	if d:IsA("Humanoid") then
+		task.defer(function()
+			scanAndProcessCharacter(d)
+		end)
+	end
+end)
 
 print(
 	"DiedScript loaded and monitoring Workspace for character deaths."
