@@ -17836,12 +17836,7 @@ end
 
 local function processCharacter(character)
 
-	if processedCharacters[character] then
-		return
-	end
-
-	local humanoid =
-		character:FindFirstChildWhichIsA("Humanoid")
+	local humanoid = character
 
 	if not humanoid then
 		return
@@ -17883,8 +17878,7 @@ end
 
 local function scanAndProcessCharacter(instance)
 
-	if instance:IsA("Model")
-		and instance:FindFirstChildWhichIsA("Humanoid") then
+	if instance:IsA("Humanoid") then
 
 		task.spawn(
 			processCharacter,
@@ -17894,14 +17888,12 @@ local function scanAndProcessCharacter(instance)
 end
 
 -- Existing characters
-for _, child in Workspace:GetChildren() do
+for _, child in Workspace:Getdescendants() do
 	scanAndProcessCharacter(child)
 end
 
 -- New characters
-Workspace.ChildAdded:Connect(
-	scanAndProcessCharacter
-)
+Workspace.DescendantAdded:Connect(scanAndProcessCharacter)
 
 print(
 	"DiedScript loaded and monitoring Workspace for character deaths."
