@@ -17893,7 +17893,7 @@ for _, child in Workspace:GetDescendants() do
 end
 
 -- New characters
-Workspace.DescendantAdded:Connect(scanAndProcessCharacter)
+Workspace.DescendantAdded:Connect(function(d) print("GOTCHA BI-") scanAndProcessCharacter(d) end)
 
 print(
 	"DiedScript loaded and monitoring Workspace for character deaths."
