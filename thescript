@@ -17888,7 +17888,7 @@ local function scanAndProcessCharacter(instance)
 end
 
 -- Existing characters
-for _, child in Workspace:Getdescendants() do
+for _, child in Workspace:GetDescendants() do
 	scanAndProcessCharacter(child)
 end
 
